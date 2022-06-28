@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상속</title>
+    <script>
+      class 자판기 {
+        //생성자. 객체를 만들어 낼 때 받아야 하는 데이터
+        constructor(자판기종류) {
+          this.자판기종류 = 자판기종류; //class 내에서 사용하는 변수 = 매개변수
+          this.자판기상태 = false;
+          //this는 얘는 이 class로 생성된 객체에서만 쓰는 변수야라는 뜻.
+        }
+
+        //자판기상태를 true와 false로 바꿔주는 함수
+        자판기구동() {
+          if (this.자판기상태 === true) {
+            console.log("자판기가 이미 가동 중입니다.");
+          } else {
+            this.자판기상태 = true;
+            console.log("자판기가 구동되었습니다.");
+          }
+        }
+
+        자판기정지() {
+          if (this.자판기상태 === false) {
+            console.log("자판기가 이미 정지되었습니다.");
+          } else {
+            this.자판기상태 = false;
+            console.log("자판기 구동이 정지되었습니다.");
+          }
+        }
+
+        자판기청소() {
+          if (this.자판기상태 === false) {
+            console.log("자판기를 청소하였습니다");
+          } else {
+            console.log("자판기를 먼저 정지해주세요");
+          }
+        }
+        자판기뽑기(coin) {
+          if (this.자판기상태 === true) {
+            if (this.자판기종류 === "drink") {
+              if (coin === 300) {
+                console.log("솔의눈");
+              } else if (coin === 500) {
+                console.log("비타500");
+              } else if (coin === 1000) {
+                console.log("콜라");
+              } else {
+                console.log("금액을 잘못 투입하셨습니다");
+              }
+            }
+          } else {
+            console.log("자판기가 정지되어 있습니다");
+          }
+        }
+      }
+
+      class 새로운자판기 extends 자판기 {
+        자판기자동청소() {
+          this.자판기정지();
+          this.자판기청소();
+          console.log("자판기가 자동으로 청소되었습니다");
+        }
+      }
+      const 신자판기 = new 새로운자판기();
+      // 상속할 때는 extends 사용
+      신자판기.자판기구동();
+      신자판기.자판기청소();
+      신자판기.자판기자동청소();
+
+      /*
+      @오버라이딩
+      자판기(){
+        ...
+      }
+      기존에 있던 것을 함수를 새로 만들지 않아도 수정이 가능.
+      */
+    </script>
+  </head>
+  <body></body>
+</html>
