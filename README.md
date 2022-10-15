@@ -223,5 +223,11 @@ new.target : 함수 내부에서 사용하여 이 함수가 new 연산자와 함
 
 [19장 프로토타입.txt](https://github.com/hyounji375/JS_DeepDive/files/9739030/19.txt)
 
+-------------------------------------------------------------------------------------------------------------------------------------
+
+1012 20장 strict mode
+
+[20장 strict mode.txt](https://github.com/hyounji375/JS_DeepDive/files/9791761/20.strict.mode.txt)
+
 
 
