@@ -102,7 +102,7 @@ console.log(x) = 10
 console.log(y) = ReferenceError : y is not defined
 let y;
 var 키워드와 달리 선언 단계와 초기화 단계가 따로 일어난다. 런타임 이전에 자바스크립트 엔진에 의해 선언 단계는 이루어지지만 초기화 단계는 변수 선언문에 도달했을 때 일어난다. 이렇게 따로 선언 단계와 초기화 단계가 따로 일어나기 때문에 일시적 사각지대가 생긴다. 
-일시적 사/각지대(TDZ)란 스코프의 시작 지점부터 초기화 시작 지점까지 변수를 참조할 수 없는 구간을 의미한다. 
+일시적 사각지대(TDZ)란 스코프의 시작 지점부터 초기화 시작 지점까지 변수를 참조할 수 없는 구간을 의미한다. 
 
 선언 단계 - console.log(y) = ReferenceError : y is not defined
 TDZ - console.log(y) = ReferenceError : y is not defined
